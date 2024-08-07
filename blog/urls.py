@@ -10,16 +10,20 @@
 #     re_path(r'^user/', views.user),
 # ]
 
-from django.urls import path, include
+# from django.urls import path
+# from blog import views
+#
+# urlpatterns = [
+#     path("", views.index),
+#     path("about/", views.about),
+#     path("contact/", views.contact),
+#     path("details/", views.details),
+# ]
+
+from django.urls import path
 from blog import views
 
-product_patterns = [
-    path("", views.products),
-    path("comments/", views.comments),
-    path("questions/", views.questions),
-]
-
 urlpatterns = [
-    path("", views.index),
-    path("products/<int:id>/", include(product_patterns)),
+    path("index/<int:id>/", views.index),
+    path("access/<int:age>/", views.access),
 ]
